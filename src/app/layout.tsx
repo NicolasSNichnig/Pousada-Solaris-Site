@@ -1,32 +1,32 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Playfair_Display, Lato } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const playfair = Playfair_Display({
   subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["400", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const lato = Lato({
   subsets: ["latin"],
+  variable: "--font-body",
+  weight: ["300", "400", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Pousada Solaris",
-  description: "Pousada Solaris - Conforto e aconchego à beira-mar em Praia da Pinhera, SC.",
+  title: "Pousada Solaris — Conforto e aconchego à beira-mar em Praia da Pinhera, SC",
+  description: "Pousada Solaris: anfitriões Cláudio e Letícia recebem você com calor humano e hospitalidade.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="pt-br">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${playfair.variable} ${lato.variable} antialiased`}>
         {children}
       </body>
     </html>

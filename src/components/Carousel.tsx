@@ -9,7 +9,7 @@ interface CarouselProps {
   pic6: string;
   pic7: string;
   pic8: string;
-  id: number,
+  id: number;
 }
 
 export default function Carousel({pic, pic2, pic3, pic4, pic5, pic6, pic7, pic8, id}: CarouselProps){

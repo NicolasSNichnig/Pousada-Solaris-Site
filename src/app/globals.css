@@ -2,33 +2,65 @@
 @plugin "daisyui";
 @import "tailwindcss-animated";
 
-html{
+html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px !important;
+  scroll-padding-top: 80px;
 }
 
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #F4EDE4;
+  --fg: #3B2F2F;
+  --accent: #C4873A;
+  --sage: #5C6B5A;
+  --sand: #D8CFC3;
+  --deep: #231C19;
+  --card-bg: #FDF8F0;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-accent: var(--accent);
+  --color-sage: var(--sage);
+  --color-sand: var(--sand);
+  --color-deep: var(--deep);
+  --color-card-bg: var(--card-bg);
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: "Lato", "Helvetica Neue", Arial, sans-serif;
+  --font-sans: var(--font-body);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Enhanced contrast colors */
+  --color-text-primary: #2a1f18;
+  --color-text-secondary: #4a3f35;
+  --color-text-on-dark: #f8f5f2;
+  --color-text-dark-muted: #6b5d52;
+  --color-text-on-dark-primary: #ffffff;
+  --color-text-on-dark-secondary: #e8e5e0;
+  --color-text-on-dark-muted: #c4c1ba;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  /* Ensure good contrast by default */
 }
+
+/* High contrast text utilities */
+.text-high-contrast {
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+.text-medium-contrast {
+  color: var(--color-text-secondary);
+}
+
+.text-on-dark {
+  color: var(--color-text-on-dark);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--sand); border-radius: 3px; }
